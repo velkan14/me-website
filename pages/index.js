@@ -1,7 +1,8 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import Image from "next/image";
 import Particles from "react-tsparticles";
+import Card from "../components/card";
+import Image from "next/image";
 import { FaLinkedinIn, FaGithub, FaEnvelope } from "react-icons/fa";
 
 export default function Home() {
@@ -282,7 +283,7 @@ export default function Home() {
       period: "September 2020 – January 2021",
       description:
         "Creation of promotions for several games. Analysing requirements, configuring sheets and developing promotions with an internal tool. Usage of git for version control. Team communication managed with agile methodologies.",
-      tags: ["python", "git", "internal language..."],
+      tags: ["python", "git", "DSL"],
     },
     {
       id: 2,
@@ -320,6 +321,25 @@ export default function Home() {
     },
   ];
 
+  const education = [
+    {
+      id: 1,
+      title: "MSc in Information Systems and Computer Engineering",
+      company: "Instituto Superior Técnico",
+      period: "2015 – Present",
+      description:
+        "Worth mentioning projects: Secure Calendar; File server (with integrity guarantees, smart card based authentication and intrusion-tolerant replication); Publisher-Subscriber distributed system; OpenGL Engine for 1v1 Tank War game; Development of game Overwall; Distributed mobile application; InfoVis about World Trades; Agents with emotions on scuba diving. Master’s Thesis: Development of software to support the co-creative process of placing monsters and items in level design.",
+    },
+    {
+      id: 2,
+      title: "BSc in Information Systems and Computer Engineering ",
+      company: "Instituto Superior Técnico",
+      period: "2012 – 2015",
+      description:
+        "Worth mentioning projects: Frogger game; Key-Value store (synchronized); Spreadsheet; Bidding system in a PHP site with database access; Fill-a-pix puzzle solver.",
+    },
+  ];
+
   return (
     <div className={styles.container}>
       <Particles options={particles}></Particles>
@@ -330,7 +350,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>Daniel Amado</h1>
-        <div className={styles.social}>
+        <section className={styles.social}>
           <a href="https://github.com/velkan14">
             <FaGithub size="3em" />
           </a>
@@ -340,9 +360,9 @@ export default function Home() {
           <a href="mailto:velkan14@gmail.com">
             <FaEnvelope size="3em" />
           </a>
-        </div>
+        </section>
         <h2 className={styles.subtitle}>Projects</h2>
-        <div className={styles.grid}>
+        <section className={styles.grid}>
           <a
             href="https://play.google.com/store/apps/details?id=org.godotengine.blockswipe"
             className={styles.card}
@@ -372,51 +392,55 @@ export default function Home() {
               </div>
             </div>
           </a>
-          <article className={styles.card}>
-            <h3>Sigma Mobile</h3>
-            <h5>June 2020 – Present</h5>
-            <p>
-              A mobile application made with React Native, Redux and UI Kitten
-              5.0. It integrates with Sigma through a REST API (Integrated Car
-              Maintenance Management System) to register licence plates and take
-              photos as evidences.
-            </p>
-            <div className={styles.tags}>
-              {["React Native", "TypeScript", "UI  Kitten 5.0", "PHP"].map(
-                (tag) => (
-                  <span key={tag}>{tag}</span>
-                )
-              )}
-            </div>
-          </article>
-        </div>
+          <Card
+            id="sigmamobile"
+            title="Sigma Mobile"
+            remark="June 2020 – Present"
+            description="A mobile application made with React Native, Redux and UI Kitten
+            5.0. It integrates with Sigma through a REST API (Integrated Car
+            Maintenance Management System) to register licence plates and take
+            photos as evidences."
+            tags={["React Native", "TypeScript", "UI  Kitten 5.0", "PHP"]}
+          />
+        </section>
 
         <h2 className={styles.subtitle}>Working Experience</h2>
-        <div className={styles.grid}>
+        <section className={styles.grid}>
           {jobs.map(({ id, title, company, period, description, tags }) => (
-            <article key={id} className={styles.card}>
-              <h3>{company}</h3>
-              <h4>{title}</h4>
-              <h5>{period}</h5>
-              <p>{description}</p>
-              <div className={styles.tags}>
-                {tags.map((tag) => (
-                  <span key={tag}>{tag}</span>
-                ))}
-              </div>
-            </article>
+            <Card
+              id={id}
+              title={title}
+              subtitle={company}
+              remark={period}
+              description={description}
+              tags={tags}
+            />
           ))}
-        </div>
+        </section>
         <h2 className={styles.subtitle}>Certifications</h2>
-        <div className={styles.grid}>
+        <section className={styles.grid}>
           {certifications.map(({ id, title, company, period, url }) => (
-            <a key={id} href={url} className={styles.card}>
-              <h3>{title} &rarr;</h3>
-              <h4>{company}</h4>
-              <h5>{period}</h5>
-            </a>
+            <Card
+              id={id}
+              title={title}
+              subtitle={company}
+              url={url}
+              remark={period}
+            />
           ))}
-        </div>
+        </section>
+        <h2 className={styles.subtitle}>Education</h2>
+        <section className={styles.grid}>
+          {education.map(({ id, title, company, period, description }) => (
+            <Card
+              id={id}
+              title={title}
+              subtitle={company}
+              description={description}
+              remark={period}
+            />
+          ))}
+        </section>
       </main>
     </div>
   );
