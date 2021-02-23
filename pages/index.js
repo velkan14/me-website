@@ -276,6 +276,7 @@ export default function Home() {
   };
   const jobs = [
     {
+      id: 1,
       title: "Software Developer",
       company: "Miniclip",
       period: "September 2020 – January 2021",
@@ -284,6 +285,7 @@ export default function Home() {
       tags: ["python", "git", "internal language..."],
     },
     {
+      id: 2,
       title: "Software Developer",
       company: "Xpand IT",
       period: "January 2018 – September 2020",
@@ -295,18 +297,21 @@ export default function Home() {
 
   const certifications = [
     {
+      id: 1,
       title: "The Complete Web Developer in 2021: Zero to Mastery",
       company: "Udemy",
       period: "February 2021",
       url: "http://ude.my/UC-24f84ae7-216e-4f46-b18f-89d6b552811e",
     },
     {
+      id: 2,
       title: "API Manager 2 Developer",
       company: "WSO2",
       period: "July 2019",
       url: "/certifications/WSO2 Certified API Manager 2 Developer.pdf",
     },
     {
+      id: 3,
       title: "Enterprise Integrator 6 Developer – ESB Profile",
       company: "WSO2",
       period: "July 2019",
@@ -327,13 +332,13 @@ export default function Home() {
         <h1 className={styles.title}>Daniel Amado</h1>
         <div className={styles.social}>
           <a href="https://github.com/velkan14">
-            <FaGithub size="3rem" />
+            <FaGithub size="3em" />
           </a>
           <a href="https://www.linkedin.com/in/daniel-s-amado/">
-            <FaLinkedinIn size="3rem" />
+            <FaLinkedinIn size="3em" />
           </a>
           <a href="mailto:velkan14@gmail.com">
-            <FaEnvelope size="3rem" />
+            <FaEnvelope size="3em" />
           </a>
         </div>
         <h2 className={styles.subtitle}>Projects</h2>
@@ -361,7 +366,7 @@ export default function Home() {
                 </p>
                 <div className={styles.tags}>
                   {["Godot", "GDScript"].map((tag) => (
-                    <span>{tag}</span>
+                    <span key={tag}>{tag}</span>
                   ))}
                 </div>
               </div>
@@ -379,7 +384,7 @@ export default function Home() {
             <div className={styles.tags}>
               {["React Native", "TypeScript", "UI  Kitten 5.0", "PHP"].map(
                 (tag) => (
-                  <span>{tag}</span>
+                  <span key={tag}>{tag}</span>
                 )
               )}
             </div>
@@ -388,15 +393,15 @@ export default function Home() {
 
         <h2 className={styles.subtitle}>Working Experience</h2>
         <div className={styles.grid}>
-          {jobs.map(({ title, company, period, description, tags }) => (
-            <article className={styles.card}>
+          {jobs.map(({ id, title, company, period, description, tags }) => (
+            <article key={id} className={styles.card}>
               <h3>{company}</h3>
               <h4>{title}</h4>
               <h5>{period}</h5>
               <p>{description}</p>
               <div className={styles.tags}>
                 {tags.map((tag) => (
-                  <span>{tag}</span>
+                  <span key={tag}>{tag}</span>
                 ))}
               </div>
             </article>
@@ -404,8 +409,8 @@ export default function Home() {
         </div>
         <h2 className={styles.subtitle}>Certifications</h2>
         <div className={styles.grid}>
-          {certifications.map(({ title, company, period, url }) => (
-            <a href={url} className={styles.card}>
+          {certifications.map(({ id, title, company, period, url }) => (
+            <a key={id} href={url} className={styles.card}>
               <h3>{title} &rarr;</h3>
               <h4>{company}</h4>
               <h5>{period}</h5>
