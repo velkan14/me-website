@@ -1,7 +1,6 @@
 import styles from "../styles/Home.module.css";
 
 export default function Card({
-  id,
   title,
   subtitle,
   remark,
@@ -10,7 +9,7 @@ export default function Card({
   url,
 }) {
   return (
-    <a key={id} href={url} className={styles.card}>
+    <a href={url} className={styles.card}>
       <h3>
         {title} {url && <span>&rarr;</span>}
       </h3>

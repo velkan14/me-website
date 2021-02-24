@@ -277,7 +277,7 @@ export default function Home() {
   };
   const jobs = [
     {
-      id: 1,
+      id: "job_miniclip",
       title: "Software Developer",
       company: "Miniclip",
       period: "September 2020 – January 2021",
@@ -286,7 +286,7 @@ export default function Home() {
       tags: ["python", "git", "DSL"],
     },
     {
-      id: 2,
+      id: "job_xpandit",
       title: "Software Developer",
       company: "Xpand IT",
       period: "January 2018 – September 2020",
@@ -298,21 +298,21 @@ export default function Home() {
 
   const certifications = [
     {
-      id: 1,
+      id: "cert_udemy",
       title: "The Complete Web Developer in 2021: Zero to Mastery",
       company: "Udemy",
       period: "February 2021",
       url: "http://ude.my/UC-24f84ae7-216e-4f46-b18f-89d6b552811e",
     },
     {
-      id: 2,
+      id: "cert_wso2_apim",
       title: "API Manager 2 Developer",
       company: "WSO2",
       period: "July 2019",
       url: "/certifications/WSO2 Certified API Manager 2 Developer.pdf",
     },
     {
-      id: 3,
+      id: "cert_wso2_esb",
       title: "Enterprise Integrator 6 Developer – ESB Profile",
       company: "WSO2",
       period: "July 2019",
@@ -345,7 +345,30 @@ export default function Home() {
       <Particles options={particles}></Particles>
       <Head>
         <title>Daniel Amado</title>
-        <link rel="icon" href="/me_icon.png" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicons/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicons/favicon-16x16.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/favicons/apple-touch-icon.png"
+        />
+        <link rel="manifest" href="/favicons/site.webmanifest" />
+        <link
+          rel="mask-icon"
+          href="/favicons/safari-pinned-tab.svg"
+          color="#5bbad5"
+        />
+        <meta name="theme-color" content="#232741" />
       </Head>
 
       <main className={styles.main}>
@@ -393,7 +416,6 @@ export default function Home() {
             </div>
           </a>
           <Card
-            id="sigmamobile"
             title="Sigma Mobile"
             remark="June 2020 – Present"
             description="A mobile application made with React Native, Redux and UI Kitten
@@ -408,7 +430,7 @@ export default function Home() {
         <section className={styles.grid}>
           {jobs.map(({ id, title, company, period, description, tags }) => (
             <Card
-              id={id}
+              key={id}
               title={title}
               subtitle={company}
               remark={period}
@@ -421,7 +443,7 @@ export default function Home() {
         <section className={styles.grid}>
           {certifications.map(({ id, title, company, period, url }) => (
             <Card
-              id={id}
+              key={id}
               title={title}
               subtitle={company}
               url={url}
@@ -433,7 +455,7 @@ export default function Home() {
         <section className={styles.grid}>
           {education.map(({ id, title, company, period, description }) => (
             <Card
-              id={id}
+              key={id}
               title={title}
               subtitle={company}
               description={description}
