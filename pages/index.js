@@ -420,6 +420,13 @@ export default function Home() {
             photos as evidences."
             tags={["React Native", "TypeScript", "UI  Kitten 5.0", "PHP"]}
           />
+          <Card
+            title="Music Player"
+            remark="March 2021"
+            description="A simple Single Page Application to search and list musics from itunes API. You can also listen to previews."
+            tags={["React", "Jest"]}
+            url="https://react-music-player-velkan14.vercel.app/"
+          />
         </section>
 
         <h2 className={styles.subtitle}>Working Experience</h2>

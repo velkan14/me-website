@@ -8,21 +8,30 @@ export default function Card({
   tags,
   url,
 }) {
-  return (
+  const content = () => {
+    return (
+      <>
+        <h3>
+          {title} {url && <span>&rarr;</span>}
+        </h3>
+        <h4>{subtitle}</h4>
+        <h5>{remark}</h5>
+        {description && <p>{description}</p>}
+        {tags && (
+          <div className={styles.tags}>
+            {tags.map((tag) => (
+              <span key={tag}>{tag}</span>
+            ))}
+          </div>
+        )}
+      </>
+    );
+  };
+  return url !== undefined ? (
     <a href={url} className={styles.card}>
-      <h3>
-        {title} {url && <span>&rarr;</span>}
-      </h3>
-      <h4>{subtitle}</h4>
-      <h5>{remark}</h5>
-      {description && <p>{description}</p>}
-      {tags && (
-        <div className={styles.tags}>
-          {tags.map((tag) => (
-            <span key={tag}>{tag}</span>
-          ))}
-        </div>
-      )}
+      {content()}
     </a>
+  ) : (
+    <div className={styles.card}>{content()}</div>
   );
 }
