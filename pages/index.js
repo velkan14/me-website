@@ -427,6 +427,13 @@ export default function Home() {
             tags={["React", "Jest"]}
             url="https://react-music-player-velkan14.vercel.app/"
           />
+          <Card
+            title="Chess Viewer"
+            remark="March 2021"
+            description="A chess board where you can load FEN and move pieces."
+            tags={["React", "Jest", "chess.js"]}
+            url="https://chess-viewer.vercel.app/"
+          />
         </section>
 
         <h2 className={styles.subtitle}>Working Experience</h2>
