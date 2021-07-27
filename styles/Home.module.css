@@ -2,6 +2,7 @@
   min-height: 100vh;
   padding: 0 0.5rem;
   color: #d7cdcc;
+  background-color: #1b1c28;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -169,7 +170,7 @@
   text-decoration: none;
   border-radius: 8px;
 
-  background-color: #9c528b;
+  background-color: #529c65;
   color: white;
   transition: color 0.15s ease, border-color 0.15s ease;
   font-family: Lucida Console, monospace;
