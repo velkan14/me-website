@@ -7,6 +7,15 @@ import { FaLinkedinIn, FaGithub, FaEnvelope } from "react-icons/fa";
 export default function Home() {
   const jobs = [
     {
+      id: "job_chessable",
+      title: "Frontend Developer",
+      company: "Chessable",
+      period: "April 2021 – July 2021",
+      description:
+        "Building a Design System in Clutch with styled-components. Working on improving the look & feel of some pages on a React project.",
+      tags: ["javascript", "React", "Clutch"],
+    },
+    {
       id: "job_miniclip",
       title: "Software Developer",
       company: "Miniclip",
