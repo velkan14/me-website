@@ -155,7 +155,7 @@ export default function Home() {
             5.0. It integrates with Sigma through a REST API (Integrated Car
             Maintenance Management System) to register licence plates and take
             photos as evidences."
-            tags={["React Native", "TypeScript", "UI  Kitten 5.0", "PHP"]}
+            tags={["ReactNative", "TypeScript", "UI  Kitten 5.0", "PHP"]}
           />
           <Card
             title="Music Player"
@@ -175,7 +175,7 @@ export default function Home() {
             title="Reaction Test"
             remark="September 2021"
             description="A reaction test to measure how fast you are."
-            tags={["ReactNative", "expo.io"]}
+            tags={["ReactNative", "TypeScript", "expo.io"]}
             url="https://reaction-test.vercel.app/"
           />
         </section>
