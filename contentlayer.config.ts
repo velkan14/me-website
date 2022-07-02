@@ -1,29 +1,10 @@
-import { defineDocumentType, makeSource } from "contentlayer/source-files";
-
-export const Certification = defineDocumentType(() => ({
-  name: "Certification",
-  filePathPattern: `certifications/**/*.md`,
-  fields: {
-    title: {
-      type: "string",
-      description: "The title of the post",
-      required: true,
-    },
-    date: {
-      type: "date",
-      description: "The date of the post",
-      required: true,
-    },
-  },
-  computedFields: {
-    url: {
-      type: "string",
-      resolve: (post) => `/posts/${post._raw.flattenedPath}`,
-    },
-  },
-}));
+import { makeSource } from "contentlayer/source-files";
+import { Projects } from "./types/content/projects";
+import { Certification } from "./types/content/certification";
+import { Education } from "./types/content/education";
+import { Work } from "./types/content/work";
 
 export default makeSource({
   contentDirPath: "content",
-  documentTypes: [Certification],
+  documentTypes: [Certification, Education, Work, Projects],
 });
