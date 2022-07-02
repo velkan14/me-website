@@ -20,12 +20,12 @@ const Card = ({
   url,
 }: Props) => {
   return (
-    <div className="flex flex-col w-full gap-2 p-6 m-2 bg-white rounded-xl">
+    <div className="flex flex-col w-full gap-2 p-6 m-2 bg-gray-800 rounded-xl">
       <h3 className="text-xl">
         {title} {url && <span>&rarr;</span>}
       </h3>
       <h4>{subtitle}</h4>
-      <h5>{remark}</h5>
+      <h5 className="text-sm">{remark}</h5>
       <p>{description}</p>
       {html && (
         <div
