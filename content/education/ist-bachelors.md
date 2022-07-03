@@ -7,8 +7,8 @@ period: "2012 – 2015"
 
 Worth mentioning projects:
 
-1. Frogger game
-2. Key-Value store (synchronized)
-3. Spreadsheet
-4. Bidding system in a PHP site with database access
-5. Fill-a-pix puzzle solver
+- Frogger game
+- Key-Value store (synchronized)
+- Spreadsheet
+- Bidding system in a PHP site with database access
+- Fill-a-pix puzzle solver

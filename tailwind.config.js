@@ -1,11 +1,34 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require("tailwindcss/defaultTheme");
+const { fontFamily } = defaultTheme;
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["Nunito", ...fontFamily.sans],
+      },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            color: theme("colors.dark"),
+            strong: {
+              color: theme("colors.dark"),
+            },
+            "ol > li::marker": {
+              color: theme("colors.dark"),
+            },
+            "ul > li::marker": {
+              color: theme("colors.dark"),
+            },
+          },
+        },
+      }),
+    },
     colors: {
       transparent: "transparent",
       current: "currentColor",
@@ -16,5 +39,8 @@ module.exports = {
       dark: "#073B4C",
     },
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/typography"),
+    // ...
+  ],
 };

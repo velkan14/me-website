@@ -46,7 +46,7 @@ const Card = ({
       </div>
       {html && (
         <div
-          className="cl-post-body"
+          className="prose md:prose-lg"
           dangerouslySetInnerHTML={{ __html: html }}
         />
       )}
