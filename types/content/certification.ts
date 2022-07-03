@@ -1,4 +1,5 @@
 import { defineDocumentType } from "contentlayer/source-files";
+import { format } from "date-fns";
 
 export const Certification = defineDocumentType(() => ({
   name: "Certification",
@@ -23,6 +24,13 @@ export const Certification = defineDocumentType(() => ({
       type: "string",
       description: "Link to the certificate",
       required: true,
+    },
+  },
+
+  computedFields: {
+    period: {
+      type: "date",
+      resolve: (cert) => format(new Date(cert.date), "MMMM yyyy"),
     },
   },
 }));

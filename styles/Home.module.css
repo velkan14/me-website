@@ -186,3 +186,34 @@
     flex-direction: column;
   }
 }
+
+.glow {
+  font-family: "Zen Tokyo Zoo", cursive;
+  position: relative;
+  font-size: 6em;
+  letter-spacing: 15px;
+  color: #fff;
+  text-shadow: 0 0 10px #ffd166, 0 0 20px #ffd166, 0 0 40px #ffd166,
+    0 0 80px #ffd166, 0 0 160px #ffd166;
+  text-transform: Uppercase;
+  text-align: center;
+  width: 100%;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+  outline: none;
+  animation: animate 5s linear;
+}
+@keyframes animate {
+  0%,
+  30%,
+  50% {
+    color: #0e3742;
+    text-shadow: none;
+  }
+  60.1%,
+  65%,
+  100% {
+    color: #fff;
+    text-shadow: 0 0 10px #ffd166, 0 0 20px #ffd166, 0 0 40px #ffd166,
+      0 0 80px #ffd166, 0 0 160px #ffd166;
+  }
+}
