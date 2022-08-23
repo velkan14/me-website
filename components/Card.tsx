@@ -35,21 +35,23 @@ const Card = ({
 }: Props) => {
   return (
     <div
-      className={`flex flex-col w-full gap-2 p-6 rounded-sm text-dark ${colors[variant].background}`}
+      className={`flex flex-col justify-between w-full gap-3 p-6 rounded-sm text-dark ${colors[variant].background}`}
     >
-      <h3 className={`text-xl font-bold ${colors[variant].title}`}>
-        {title} {url && <span>&rarr;</span>}
-      </h3>
-      <div className="flex flex-wrap items-center gap-2">
-        {subtitle && <h4 className="text-lg">{subtitle}</h4>}
-        <h5 className="text-sm font-light">{remark}</h5>
+      <div className="flex flex-col gap-3">
+        <h3 className={`text-xl font-bold ${colors[variant].title}`}>
+          {title} {url && <span>&rarr;</span>}
+        </h3>
+        <div className="flex flex-wrap items-center gap-2">
+          {subtitle && <h4 className="text-lg">{subtitle}</h4>}
+          <h5 className="text-sm font-light">{remark}</h5>
+        </div>
+        {html && (
+          <div
+            className="prose md:prose-lg"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+        )}
       </div>
-      {html && (
-        <div
-          className="prose md:prose-lg"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-      )}
       <div className="flex flex-wrap gap-2">
         {tags.map((tag) => (
           <span key={tag} className="px-4 py-1 text-sm rounded-md bg-green">

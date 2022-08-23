@@ -6,4 +6,6 @@ period: "September 2020 – January 2021"
 tags: ["Python", "Git", "DSL"]
 ---
 
-Creation of promotions for several games. Analysing requirements, configuring sheets and developing promotions with an internal tool. Usage of git for version control. Team communication managed with agile methodologies.
+Creation of promotions for several games. Analysing requirements, configuring sheets and developing promotions with an internal tool.
+
+Usage of git for version control. Team communication managed with agile methodologies.
