@@ -55,48 +55,66 @@ export default function Home({
             <FaEnvelope size="3em" />
           </a>
         </section>
-        <section className="grid max-w-4xl gap-6 p-4 sm:grid-cols-2">
-          {projects.map((project) => (
-            <Card
-              key={project._id}
-              title={project.title}
-              remark={project.period}
-              html={project.body.html}
-              tags={project.tags}
-              url={project.href}
-            />
-          ))}
-          {certifications.map(({ _id, title, certifier, href, period }) => (
-            <Card
-              key={_id}
-              title={title}
-              subtitle={certifier}
-              url={href}
-              remark={period}
-              variant="ternary"
-            />
-          ))}
-          {works.map((work) => (
-            <Card
-              key={work._id}
-              title={work.title}
-              subtitle={work.company}
-              remark={work.period}
-              html={work.body.html}
-              tags={work.tags}
-              variant="secondary"
-            />
-          ))}
-          {education.map(({ _id, degree, school, period, body }) => (
-            <Card
-              key={_id}
-              title={degree}
-              subtitle={school}
-              html={body.html}
-              remark={period}
-              variant="ternary"
-            />
-          ))}
+        <section>
+          <h1 className="text-2xl font-bold text-yellow">Projects</h1>
+          <div className="grid max-w-4xl gap-6 p-4 sm:grid-cols-2">
+            {projects.map((project) => (
+              <Card
+                key={project._id}
+                title={project.title}
+                remark={project.period}
+                html={project.body.html}
+                tags={project.tags}
+                url={project.href}
+              />
+            ))}
+          </div>
+        </section>
+        <section>
+          <h1 className="text-2xl font-bold text-yellow">Experience</h1>
+          <div className="grid max-w-4xl gap-6 p-4 sm:grid-cols-2">
+            {works.map((work) => (
+              <Card
+                key={work._id}
+                title={work.title}
+                subtitle={work.company}
+                remark={work.period}
+                html={work.body.html}
+                tags={work.tags}
+                variant="secondary"
+              />
+            ))}
+          </div>
+        </section>
+        <section>
+          <h1 className="text-2xl font-bold text-yellow">Certifications</h1>
+          <div className="grid max-w-4xl gap-6 p-4 sm:grid-cols-2">
+            {certifications.map(({ _id, title, certifier, href, period }) => (
+              <Card
+                key={_id}
+                title={title}
+                subtitle={certifier}
+                url={href}
+                remark={period}
+                variant="ternary"
+              />
+            ))}
+          </div>
+        </section>
+        <section>
+          <h1 className="text-2xl font-bold text-yellow">Education</h1>
+          <div className="grid max-w-4xl gap-6 p-4 sm:grid-cols-2">
+            {education.map(({ _id, degree, school, period, body }) => (
+              <Card
+                key={_id}
+                title={degree}
+                subtitle={school}
+                html={body.html}
+                remark={period}
+                variant="ternary"
+              />
+            ))}
+          </div>
         </section>
       </main>
     </div>
